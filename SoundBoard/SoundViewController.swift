@@ -36,6 +36,9 @@ class SoundViewController: UIViewController {
             let basePath : String = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
             let pathComponents = [basePath, "audio.m4a"]
             let audioUrl = NSURL.fileURL(withPathComponents: pathComponents)!
+            print("###################")
+            print(audioUrl)
+            print("###################")
             
             
             // Create settings for audio recorder
@@ -55,6 +58,21 @@ class SoundViewController: UIViewController {
     }
     
     @IBAction func recordTapped(_ sender: AnyObject) {
+        
+        if audioRecorder!.isRecording {
+            //Stop the recording
+            audioRecorder?.stop()
+            
+            //Change button title to record
+            recordButton.setTitle("Record", for: .normal)
+            
+        } else {
+            //Start Recording
+            audioRecorder?.record()
+            
+            // Change button title to stop
+            recordButton.setTitle("Stop", for: .normal)
+        }
         
     }
     
