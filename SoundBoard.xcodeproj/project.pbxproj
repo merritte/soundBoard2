@@ -13,6 +13,7 @@
 		DEC577BD1DBC4D560074C732 /* SoundBoard.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = DEC577BB1DBC4D560074C732 /* SoundBoard.xcdatamodeld */; };
 		DEC577BF1DBC4D560074C732 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DEC577BE1DBC4D560074C732 /* Assets.xcassets */; };
 		DEC577C21DBC4D560074C732 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DEC577C01DBC4D560074C732 /* LaunchScreen.storyboard */; };
+		DEC577CA1DBC54B70074C732 /* SoundViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEC577C91DBC54B70074C732 /* SoundViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		DEC577BE1DBC4D560074C732 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DEC577C11DBC4D560074C732 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		DEC577C31DBC4D560074C732 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DEC577C91DBC54B70074C732 /* SoundViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				DEC577B41DBC4D560074C732 /* AppDelegate.swift */,
 				DEC577B61DBC4D560074C732 /* ViewController.swift */,
 				DEC577B81DBC4D560074C732 /* Main.storyboard */,
+				DEC577C91DBC54B70074C732 /* SoundViewController.swift */,
 				DEC577BE1DBC4D560074C732 /* Assets.xcassets */,
 				DEC577C01DBC4D560074C732 /* LaunchScreen.storyboard */,
 				DEC577C31DBC4D560074C732 /* Info.plist */,
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DEC577CA1DBC54B70074C732 /* SoundViewController.swift in Sources */,
 				DEC577BD1DBC4D560074C732 /* SoundBoard.xcdatamodeld in Sources */,
 				DEC577B71DBC4D560074C732 /* ViewController.swift in Sources */,
 				DEC577B51DBC4D560074C732 /* AppDelegate.swift in Sources */,
