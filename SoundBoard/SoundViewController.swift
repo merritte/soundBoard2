@@ -15,12 +15,21 @@ class SoundViewController: UIViewController {
     
     @IBOutlet weak var nameTextField: UITextField!
     
+    @IBOutlet weak var playButton: UIButton!
+    
+    @IBOutlet weak var addButton: UIButton!
+    
     var audioRecorder : AVAudioRecorder?
+    
+    var audioPlayer : AVAudioPlayer?
+    
+    var audioUrl : URL?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         setupRecorder()
+        playButton.isEnabled = false
         
     }
     
@@ -35,10 +44,8 @@ class SoundViewController: UIViewController {
             // Create URL for the audio file
             let basePath : String = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
             let pathComponents = [basePath, "audio.m4a"]
-            let audioUrl = NSURL.fileURL(withPathComponents: pathComponents)!
-            print("###################")
-            print(audioUrl)
-            print("###################")
+            audioUrl = NSURL.fileURL(withPathComponents: pathComponents)!
+
             
             
             // Create settings for audio recorder
@@ -50,7 +57,7 @@ class SoundViewController: UIViewController {
             
             // Create AudioRecorder Object
             
-            audioRecorder = try AVAudioRecorder(url: audioUrl, settings: settings)
+            audioRecorder = try AVAudioRecorder(url: audioUrl!, settings: settings)
             audioRecorder!.prepareToRecord()
         } catch let error as NSError {
             print(error)
@@ -66,6 +73,8 @@ class SoundViewController: UIViewController {
             //Change button title to record
             recordButton.setTitle("Record", for: .normal)
             
+            playButton.isEnabled = true
+            
         } else {
             //Start Recording
             audioRecorder?.record()
@@ -77,6 +86,11 @@ class SoundViewController: UIViewController {
     }
     
     @IBAction func playTapped(_ sender: AnyObject) {
+        do {
+        try audioPlayer = AVAudioPlayer(contentsOf: audioUrl!)
+            audioPlayer!.play()
+        }catch {
+        }
         
     }
     
